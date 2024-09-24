@@ -16,14 +16,27 @@ export default class RedirectButton extends React.Component {
     }
 
     render(){
-        return(
-            <>
+
+        if (this.state.shouldRedirect){
+            return <Navigate to={"/"} />
+        } else {
+            return (
                 <button onClick={this.toggleShouldRedirect}>
-                    Go To Homepage 
-                </button>
-                {this.state.shouldRedirect && <Navigate to={"/"} />}
-            </>
-        )
+                        Go To Homepage 
+                    </button>
+            )
+        }
     }
 }
+
+//         return(
+//             <>
+//                 <button onClick={this.toggleShouldRedirect}>
+//                     Go To Homepage 
+//                 </button>
+//                 {this.state.shouldRedirect && <Navigate to={"/"} />}
+//             </>
+//         )
+//     }
+// }
 
